@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://UserServicesCentralApp" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://UserServicesCentralApp" xmlns:intf="http://UserServicesCentralApp" xmlns:tns1="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://UserServicesCentralApp" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model"/>
+   <element name="main">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="args" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mainResponse">
+    <complexType/>
+   </element>
+   <element name="isActive">
+    <complexType>
+     <sequence>
+      <element name="user" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isActiveResponse">
+    <complexType>
+     <sequence>
+      <element name="isActiveReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteFile">
+    <complexType>
+     <sequence>
+      <element name="filename" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteFileResponse">
+    <complexType/>
+   </element>
+   <element name="getUsers">
+    <complexType/>
+   </element>
+   <element name="getUsersResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getUsersReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getActiveUsersForStation">
+    <complexType>
+     <sequence>
+      <element name="stationId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getActiveUsersForStationResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getActiveUsersForStationReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUsersFromStation">
+    <complexType>
+     <sequence>
+      <element name="stationId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUsersFromStationResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getUsersFromStationReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="login">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loginResponse">
+    <complexType>
+     <sequence>
+      <element name="loginReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isUser">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isUserResponse">
+    <complexType>
+     <sequence>
+      <element name="isUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logout">
+    <complexType>
+     <sequence>
+      <element name="user" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logoutResponse">
+    <complexType/>
+   </element>
+   <element name="addUser">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="idZSMDP" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addUserResponse">
+    <complexType>
+     <sequence>
+      <element name="addUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deserializeWithXML">
+    <complexType/>
+   </element>
+   <element name="deserializeWithXMLResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="deserializeWithXMLReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isAlreadyUser">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isAlreadyUserResponse">
+    <complexType>
+     <sequence>
+      <element name="isAlreadyUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="serializeWithXML">
+    <complexType>
+     <sequence>
+      <element name="user" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="serializeWithXMLResponse">
+    <complexType/>
+   </element>
+   <element name="getThisUser">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getThisUserResponse">
+    <complexType>
+     <sequence>
+      <element name="getThisUserReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteUser">
+    <complexType>
+     <sequence>
+      <element name="user" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteUserResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="User">
+    <sequence>
+     <element name="idZSMDP" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="username" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="loginResponse">
+
+      <wsdl:part element="impl:loginResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deserializeWithXMLResponse">
+
+      <wsdl:part element="impl:deserializeWithXMLResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isUserResponse">
+
+      <wsdl:part element="impl:isUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutRequest">
+
+      <wsdl:part element="impl:logout" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginRequest">
+
+      <wsdl:part element="impl:login" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deserializeWithXMLRequest">
+
+      <wsdl:part element="impl:deserializeWithXML" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isActiveResponse">
+
+      <wsdl:part element="impl:isActiveResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteUserRequest">
+
+      <wsdl:part element="impl:deleteUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addUserRequest">
+
+      <wsdl:part element="impl:addUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isAlreadyUserResponse">
+
+      <wsdl:part element="impl:isAlreadyUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainResponse">
+
+      <wsdl:part element="impl:mainResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isUserRequest">
+
+      <wsdl:part element="impl:isUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersResponse">
+
+      <wsdl:part element="impl:getUsersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteUserResponse">
+
+      <wsdl:part element="impl:deleteUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getThisUserRequest">
+
+      <wsdl:part element="impl:getThisUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutResponse">
+
+      <wsdl:part element="impl:logoutResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="serializeWithXMLRequest">
+
+      <wsdl:part element="impl:serializeWithXML" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersFromStationRequest">
+
+      <wsdl:part element="impl:getUsersFromStation" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getThisUserResponse">
+
+      <wsdl:part element="impl:getThisUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersFromStationResponse">
+
+      <wsdl:part element="impl:getUsersFromStationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="serializeWithXMLResponse">
+
+      <wsdl:part element="impl:serializeWithXMLResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteFileResponse">
+
+      <wsdl:part element="impl:deleteFileResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getActiveUsersForStationRequest">
+
+      <wsdl:part element="impl:getActiveUsersForStation" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteFileRequest">
+
+      <wsdl:part element="impl:deleteFile" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getActiveUsersForStationResponse">
+
+      <wsdl:part element="impl:getActiveUsersForStationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainRequest">
+
+      <wsdl:part element="impl:main" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isAlreadyUserRequest">
+
+      <wsdl:part element="impl:isAlreadyUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isActiveRequest">
+
+      <wsdl:part element="impl:isActive" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersRequest">
+
+      <wsdl:part element="impl:getUsers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addUserResponse">
+
+      <wsdl:part element="impl:addUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="UserService">
+
+      <wsdl:operation name="main">
+
+         <wsdl:input message="impl:mainRequest" name="mainRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:mainResponse" name="mainResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isActive">
+
+         <wsdl:input message="impl:isActiveRequest" name="isActiveRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:isActiveResponse" name="isActiveResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteFile">
+
+         <wsdl:input message="impl:deleteFileRequest" name="deleteFileRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteFileResponse" name="deleteFileResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUsers">
+
+         <wsdl:input message="impl:getUsersRequest" name="getUsersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUsersResponse" name="getUsersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getActiveUsersForStation">
+
+         <wsdl:input message="impl:getActiveUsersForStationRequest" name="getActiveUsersForStationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getActiveUsersForStationResponse" name="getActiveUsersForStationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUsersFromStation">
+
+         <wsdl:input message="impl:getUsersFromStationRequest" name="getUsersFromStationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUsersFromStationResponse" name="getUsersFromStationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login">
+
+         <wsdl:input message="impl:loginRequest" name="loginRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loginResponse" name="loginResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isUser">
+
+         <wsdl:input message="impl:isUserRequest" name="isUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:isUserResponse" name="isUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout">
+
+         <wsdl:input message="impl:logoutRequest" name="logoutRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logoutResponse" name="logoutResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUser">
+
+         <wsdl:input message="impl:addUserRequest" name="addUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addUserResponse" name="addUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deserializeWithXML">
+
+         <wsdl:input message="impl:deserializeWithXMLRequest" name="deserializeWithXMLRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deserializeWithXMLResponse" name="deserializeWithXMLResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isAlreadyUser">
+
+         <wsdl:input message="impl:isAlreadyUserRequest" name="isAlreadyUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:isAlreadyUserResponse" name="isAlreadyUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="serializeWithXML">
+
+         <wsdl:input message="impl:serializeWithXMLRequest" name="serializeWithXMLRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:serializeWithXMLResponse" name="serializeWithXMLResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getThisUser">
+
+         <wsdl:input message="impl:getThisUserRequest" name="getThisUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getThisUserResponse" name="getThisUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteUser">
+
+         <wsdl:input message="impl:deleteUserRequest" name="deleteUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteUserResponse" name="deleteUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="UserServiceSoapBinding" type="impl:UserService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="main">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mainRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mainResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isActive">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isActiveRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isActiveResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteFile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteFileRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteFileResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUsers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUsersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUsersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getActiveUsersForStation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getActiveUsersForStationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getActiveUsersForStationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUsersFromStation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUsersFromStationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUsersFromStationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logoutRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logoutResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deserializeWithXML">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deserializeWithXMLRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deserializeWithXMLResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isAlreadyUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isAlreadyUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isAlreadyUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="serializeWithXML">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="serializeWithXMLRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="serializeWithXMLResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getThisUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getThisUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getThisUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="UserServiceService">
+
+      <wsdl:port binding="impl:UserServiceSoapBinding" name="UserService">
+
+         <wsdlsoap:address location="http://localhost:8080/AppSoap/services/UserService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

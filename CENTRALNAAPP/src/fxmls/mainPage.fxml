@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="199.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainPageController">
+   <children>
+      <Button fx:id="addUserButton" layoutX="21.0" layoutY="11.0" maxHeight="35.0" maxWidth="150.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#onClickAddUserButton" prefHeight="35.0" prefWidth="150.0" text="Dodaj korisnika" />
+      <Button fx:id="deleteUserButton" layoutX="21.0" layoutY="51.0" maxHeight="35.0" maxWidth="150.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#onClickDeleteUserButton" prefHeight="35.0" prefWidth="150.0" text="Obrisi korisnika" />
+      <Button fx:id="viewUsersButton" layoutX="21.0" layoutY="91.0" maxHeight="35.0" maxWidth="150.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#onClickViewUsersButton" prefHeight="35.0" prefWidth="150.0" text="Pregled svih korisnika" />
+      <Button fx:id="createTimetableButton" layoutX="21.0" layoutY="131.0" maxHeight="35.0" maxWidth="150.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#onClickCreateTimetableButton" prefHeight="35.0" prefWidth="150.0" text="Kreiraj red voznje" />
+      <Button fx:id="viewTimetableButton" layoutX="21.0" layoutY="171.0" maxHeight="35.0" maxWidth="150.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#onClickViewTimetableButton" prefHeight="35.0" prefWidth="150.0" text="Pregledaj red voznje" />
+      <Button fx:id="deleteLineBUtton" layoutX="21.0" layoutY="212.0" maxHeight="35.0" maxWidth="150.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#onClickDeleteLineButton" prefHeight="35.0" prefWidth="150.0" text="Obrisi liniju" />
+      <Button fx:id="viewReportButton" layoutX="21.0" layoutY="252.0" maxHeight="35.0" maxWidth="150.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#onClickViewReportButton" prefHeight="35.0" prefWidth="150.0" text="Pregledaj izvjestaj" />
+      <Button fx:id="downloadReportButton" layoutX="21.0" layoutY="293.0" maxHeight="35.0" maxWidth="150.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#onClickDownloadReportButton" prefHeight="35.0" prefWidth="150.0" text="Preuzmi izvjestaj" />
+   </children>
+</AnchorPane>

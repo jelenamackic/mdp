@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://UserServicesCentralApp" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://UserServicesCentralApp" xmlns:intf="http://UserServicesCentralApp" xmlns:tns1="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://UserServicesCentralApp" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model"/>
+   <element name="deleteUser">
+    <complexType>
+     <sequence>
+      <element name="user" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteUserResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isZSMDP">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isZSMDPResponse">
+    <complexType>
+     <sequence>
+      <element name="isZSMDPReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getZSMDPs">
+    <complexType/>
+   </element>
+   <element name="getZSMDPsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getZSMDPsReturn" type="tns1:Zsmdp"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addZSMDP">
+    <complexType>
+     <sequence>
+      <element name="location" type="xsd:string"/>
+      <element name="idZSMDP" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addZSMDPResponse">
+    <complexType>
+     <sequence>
+      <element name="addZSMDPReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="User">
+    <sequence>
+     <element name="idZSMDP" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="username" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Zsmdp">
+    <sequence>
+     <element name="idZSMDP" nillable="true" type="xsd:string"/>
+     <element name="location" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="deleteUserRequest">
+
+      <wsdl:part element="impl:deleteUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getZSMDPsRequest">
+
+      <wsdl:part element="impl:getZSMDPs" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addZSMDPResponse">
+
+      <wsdl:part element="impl:addZSMDPResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addZSMDPRequest">
+
+      <wsdl:part element="impl:addZSMDP" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getZSMDPsResponse">
+
+      <wsdl:part element="impl:getZSMDPsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteUserResponse">
+
+      <wsdl:part element="impl:deleteUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isZSMDPRequest">
+
+      <wsdl:part element="impl:isZSMDP" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isZSMDPResponse">
+
+      <wsdl:part element="impl:isZSMDPResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ZSMDPUserService">
+
+      <wsdl:operation name="deleteUser">
+
+         <wsdl:input message="impl:deleteUserRequest" name="deleteUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteUserResponse" name="deleteUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isZSMDP">
+
+         <wsdl:input message="impl:isZSMDPRequest" name="isZSMDPRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:isZSMDPResponse" name="isZSMDPResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getZSMDPs">
+
+         <wsdl:input message="impl:getZSMDPsRequest" name="getZSMDPsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getZSMDPsResponse" name="getZSMDPsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addZSMDP">
+
+         <wsdl:input message="impl:addZSMDPRequest" name="addZSMDPRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addZSMDPResponse" name="addZSMDPResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ZSMDPUserServiceSoapBinding" type="impl:ZSMDPUserService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="deleteUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isZSMDP">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isZSMDPRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isZSMDPResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getZSMDPs">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getZSMDPsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getZSMDPsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addZSMDP">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addZSMDPRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addZSMDPResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ZSMDPUserServiceService">
+
+      <wsdl:port binding="impl:ZSMDPUserServiceSoapBinding" name="ZSMDPUserService">
+
+         <wsdlsoap:address location="http://localhost:8080/AppSoap/services/ZSMDPUserService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

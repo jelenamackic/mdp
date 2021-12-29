@@ -1,0 +1,54 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ZSMDPUserServiceService WSDL service -->
+
+  <service name="ZSMDPUserService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://UserServicesCentralApp"/>
+      <parameter name="wsdlServiceElement" value="ZSMDPUserServiceService"/>
+      <parameter name="schemaQualified" value="http://UserServicesCentralApp,http://model"/>
+      <parameter name="wsdlServicePort" value="ZSMDPUserService"/>
+      <parameter name="className" value="UserServicesCentralApp.ZSMDPUserServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ZSMDPUserService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="deleteUser" qname="operNS:deleteUser" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:deleteUserReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:user" xmlns:pns="http://UserServicesCentralApp" type="tns:User" xmlns:tns="http://model"/>
+      </operation>
+      <operation name="isZSMDP" qname="operNS:isZSMDP" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:isZSMDPReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getZSMDPs" qname="operNS:getZSMDPs" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:getZSMDPsReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:Zsmdp" xmlns:rtns="http://model" soapAction="" >
+      </operation>
+      <operation name="addZSMDP" qname="operNS:addZSMDP" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:addZSMDPReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:location" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:idZSMDP" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="isZSMDP getZSMDPs deleteUser addZSMDP"/>
+
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:User"
+        type="java:model.User"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:Zsmdp"
+        type="java:model.Zsmdp"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

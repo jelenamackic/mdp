@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://UserServicesCentralApp" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://UserServicesCentralApp" xmlns:intf="http://UserServicesCentralApp" xmlns:tns1="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://UserServicesCentralApp" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model"/>
+   <element name="isZSMDP">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isZSMDPResponse">
+    <complexType>
+     <sequence>
+      <element name="isZSMDPReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="putInRest">
+    <complexType>
+     <sequence>
+      <element name="zsmdp" type="tns1:Zsmdp"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="putInRestResponse">
+    <complexType/>
+   </element>
+   <element name="addZSMDP">
+    <complexType>
+     <sequence>
+      <element name="location" type="xsd:string"/>
+      <element name="idZSMDP" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addZSMDPResponse">
+    <complexType>
+     <sequence>
+      <element name="addZSMDPReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllZsmdps">
+    <complexType/>
+   </element>
+   <element name="getAllZsmdpsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllZsmdpsReturn" type="tns1:Zsmdp"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Zsmdp">
+    <sequence>
+     <element name="idZSMDP" nillable="true" type="xsd:string"/>
+     <element name="location" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addZSMDPResponse">
+
+      <wsdl:part element="impl:addZSMDPResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="putInRestRequest">
+
+      <wsdl:part element="impl:putInRest" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllZsmdpsResponse">
+
+      <wsdl:part element="impl:getAllZsmdpsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addZSMDPRequest">
+
+      <wsdl:part element="impl:addZSMDP" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="putInRestResponse">
+
+      <wsdl:part element="impl:putInRestResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isZSMDPRequest">
+
+      <wsdl:part element="impl:isZSMDP" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isZSMDPResponse">
+
+      <wsdl:part element="impl:isZSMDPResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllZsmdpsRequest">
+
+      <wsdl:part element="impl:getAllZsmdps" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ZSMDPService">
+
+      <wsdl:operation name="isZSMDP">
+
+         <wsdl:input message="impl:isZSMDPRequest" name="isZSMDPRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:isZSMDPResponse" name="isZSMDPResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="putInRest">
+
+         <wsdl:input message="impl:putInRestRequest" name="putInRestRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:putInRestResponse" name="putInRestResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addZSMDP">
+
+         <wsdl:input message="impl:addZSMDPRequest" name="addZSMDPRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addZSMDPResponse" name="addZSMDPResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllZsmdps">
+
+         <wsdl:input message="impl:getAllZsmdpsRequest" name="getAllZsmdpsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllZsmdpsResponse" name="getAllZsmdpsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ZSMDPServiceSoapBinding" type="impl:ZSMDPService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="isZSMDP">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isZSMDPRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isZSMDPResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="putInRest">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="putInRestRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="putInRestResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addZSMDP">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addZSMDPRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addZSMDPResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllZsmdps">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllZsmdpsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllZsmdpsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ZSMDPServiceService">
+
+      <wsdl:port binding="impl:ZSMDPServiceSoapBinding" name="ZSMDPService">
+
+         <wsdlsoap:address location="http://localhost:8080/AppSoap/services/ZSMDPService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://UserServicesCentralApp" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://UserServicesCentralApp" xmlns:intf="http://UserServicesCentralApp" xmlns:tns1="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://UserServicesCentralApp" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model"/>
+   <element name="markTheStationIsPassed">
+    <complexType>
+     <sequence>
+      <element name="lineID" type="xsd:string"/>
+      <element name="stationID" type="xsd:string"/>
+      <element name="time" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="markTheStationIsPassedResponse">
+    <complexType/>
+   </element>
+   <element name="getLinesForOneStation">
+    <complexType>
+     <sequence>
+      <element name="stationId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLinesForOneStationResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getLinesForOneStationReturn" type="tns1:Line"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_tns1_Timetable">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:Timetable"/>
+    </sequence>
+   </complexType>
+   <element name="writeLine">
+    <complexType>
+     <sequence>
+      <element name="line" type="tns1:Line"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="writeLineResponse">
+    <complexType>
+     <sequence>
+      <element name="writeLineReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addLine">
+    <complexType>
+     <sequence>
+      <element name="lineId" type="xsd:int"/>
+      <element maxOccurs="unbounded" name="stations" type="tns1:Timetable"/>
+      <element name="numberOfStations" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addLineResponse">
+    <complexType>
+     <sequence>
+      <element name="addLineReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteLine">
+    <complexType>
+     <sequence>
+      <element name="lineId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteLineResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteLineReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllLines">
+    <complexType/>
+   </element>
+   <element name="getAllLinesResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllLinesReturn" type="tns1:Line"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isLine">
+    <complexType>
+     <sequence>
+      <element name="lineId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isLineResponse">
+    <complexType>
+     <sequence>
+      <element name="isLineReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="readAllFromRedis">
+    <complexType/>
+   </element>
+   <element name="readAllFromRedisResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="readAllFromRedisReturn" type="tns1:Line"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="putInRedis">
+    <complexType>
+     <sequence>
+      <element name="line" type="tns1:Line"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="putInRedisResponse">
+    <complexType/>
+   </element>
+   <element name="makeTimetable">
+    <complexType>
+     <sequence>
+      <element name="estimatedTime" type="xsd:string"/>
+      <element name="stationID" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="makeTimetableResponse">
+    <complexType>
+     <sequence>
+      <element name="makeTimetableReturn" type="tns1:Timetable"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getALine">
+    <complexType>
+     <sequence>
+      <element name="lineId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getALineResponse">
+    <complexType>
+     <sequence>
+      <element name="getALineReturn" type="tns1:Line"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://UserServicesCentralApp"/>
+   <complexType name="Timetable">
+    <sequence>
+     <element name="estimatedTime" nillable="true" type="xsd:string"/>
+     <element name="passed" type="xsd:boolean"/>
+     <element name="realTime" nillable="true" type="xsd:string"/>
+     <element name="stationId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Line">
+    <sequence>
+     <element name="lineID" type="xsd:int"/>
+     <element name="stations" nillable="true" type="impl:ArrayOf_tns1_Timetable"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="isLineResponse">
+
+      <wsdl:part element="impl:isLineResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLinesForOneStationRequest">
+
+      <wsdl:part element="impl:getLinesForOneStation" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLinesForOneStationResponse">
+
+      <wsdl:part element="impl:getLinesForOneStationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="writeLineRequest">
+
+      <wsdl:part element="impl:writeLine" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isLineRequest">
+
+      <wsdl:part element="impl:isLine" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="makeTimetableResponse">
+
+      <wsdl:part element="impl:makeTimetableResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addLineResponse">
+
+      <wsdl:part element="impl:addLineResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteLineRequest">
+
+      <wsdl:part element="impl:deleteLine" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getALineResponse">
+
+      <wsdl:part element="impl:getALineResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="makeTimetableRequest">
+
+      <wsdl:part element="impl:makeTimetable" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="putInRedisRequest">
+
+      <wsdl:part element="impl:putInRedis" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readAllFromRedisRequest">
+
+      <wsdl:part element="impl:readAllFromRedis" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="writeLineResponse">
+
+      <wsdl:part element="impl:writeLineResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteLineResponse">
+
+      <wsdl:part element="impl:deleteLineResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="putInRedisResponse">
+
+      <wsdl:part element="impl:putInRedisResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllLinesResponse">
+
+      <wsdl:part element="impl:getAllLinesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="markTheStationIsPassedResponse">
+
+      <wsdl:part element="impl:markTheStationIsPassedResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readAllFromRedisResponse">
+
+      <wsdl:part element="impl:readAllFromRedisResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllLinesRequest">
+
+      <wsdl:part element="impl:getAllLines" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="markTheStationIsPassedRequest">
+
+      <wsdl:part element="impl:markTheStationIsPassed" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addLineRequest">
+
+      <wsdl:part element="impl:addLine" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getALineRequest">
+
+      <wsdl:part element="impl:getALine" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="LineService">
+
+      <wsdl:operation name="markTheStationIsPassed">
+
+         <wsdl:input message="impl:markTheStationIsPassedRequest" name="markTheStationIsPassedRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:markTheStationIsPassedResponse" name="markTheStationIsPassedResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLinesForOneStation">
+
+         <wsdl:input message="impl:getLinesForOneStationRequest" name="getLinesForOneStationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getLinesForOneStationResponse" name="getLinesForOneStationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="writeLine">
+
+         <wsdl:input message="impl:writeLineRequest" name="writeLineRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:writeLineResponse" name="writeLineResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addLine">
+
+         <wsdl:input message="impl:addLineRequest" name="addLineRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addLineResponse" name="addLineResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteLine">
+
+         <wsdl:input message="impl:deleteLineRequest" name="deleteLineRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteLineResponse" name="deleteLineResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllLines">
+
+         <wsdl:input message="impl:getAllLinesRequest" name="getAllLinesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllLinesResponse" name="getAllLinesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isLine">
+
+         <wsdl:input message="impl:isLineRequest" name="isLineRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:isLineResponse" name="isLineResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readAllFromRedis">
+
+         <wsdl:input message="impl:readAllFromRedisRequest" name="readAllFromRedisRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:readAllFromRedisResponse" name="readAllFromRedisResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="putInRedis">
+
+         <wsdl:input message="impl:putInRedisRequest" name="putInRedisRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:putInRedisResponse" name="putInRedisResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="makeTimetable">
+
+         <wsdl:input message="impl:makeTimetableRequest" name="makeTimetableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:makeTimetableResponse" name="makeTimetableResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getALine">
+
+         <wsdl:input message="impl:getALineRequest" name="getALineRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getALineResponse" name="getALineResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LineServiceSoapBinding" type="impl:LineService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="markTheStationIsPassed">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="markTheStationIsPassedRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="markTheStationIsPassedResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLinesForOneStation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLinesForOneStationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLinesForOneStationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="writeLine">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="writeLineRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="writeLineResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addLine">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addLineRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addLineResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteLine">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteLineRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteLineResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllLines">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllLinesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllLinesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isLine">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isLineRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isLineResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readAllFromRedis">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="readAllFromRedisRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="readAllFromRedisResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="putInRedis">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="putInRedisRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="putInRedisResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="makeTimetable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="makeTimetableRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="makeTimetableResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getALine">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getALineRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getALineResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LineServiceService">
+
+      <wsdl:port binding="impl:LineServiceSoapBinding" name="LineService">
+
+         <wsdlsoap:address location="http://localhost:8080/AppSoap/services/LineService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,85 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from LineServiceService WSDL service -->
+
+  <service name="LineService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://UserServicesCentralApp"/>
+      <parameter name="wsdlServiceElement" value="LineServiceService"/>
+      <parameter name="schemaQualified" value="http://UserServicesCentralApp,http://model"/>
+      <parameter name="wsdlServicePort" value="LineService"/>
+      <parameter name="className" value="UserServicesCentralApp.LineServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="LineService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="markTheStationIsPassed" qname="operNS:markTheStationIsPassed" xmlns:operNS="http://UserServicesCentralApp" soapAction="" >
+        <parameter qname="pns:lineID" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:stationID" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:time" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getLinesForOneStation" qname="operNS:getLinesForOneStation" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:getLinesForOneStationReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:Line" xmlns:rtns="http://model" soapAction="" >
+        <parameter qname="pns:stationId" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="writeLine" qname="operNS:writeLine" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:writeLineReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:line" xmlns:pns="http://UserServicesCentralApp" type="tns:Line" xmlns:tns="http://model"/>
+      </operation>
+      <operation name="addLine" qname="operNS:addLine" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:addLineReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:lineId" xmlns:pns="http://UserServicesCentralApp" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:stations" xmlns:pns="http://UserServicesCentralApp" type="tns:Timetable" xmlns:tns="http://model"/>
+        <parameter qname="pns:numberOfStations" xmlns:pns="http://UserServicesCentralApp" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="deleteLine" qname="operNS:deleteLine" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:deleteLineReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:lineId" xmlns:pns="http://UserServicesCentralApp" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllLines" qname="operNS:getAllLines" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:getAllLinesReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:Line" xmlns:rtns="http://model" soapAction="" >
+      </operation>
+      <operation name="isLine" qname="operNS:isLine" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:isLineReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:lineId" xmlns:pns="http://UserServicesCentralApp" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="readAllFromRedis" qname="operNS:readAllFromRedis" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:readAllFromRedisReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:Line" xmlns:rtns="http://model" soapAction="" >
+      </operation>
+      <operation name="putInRedis" qname="operNS:putInRedis" xmlns:operNS="http://UserServicesCentralApp" soapAction="" >
+        <parameter qname="pns:line" xmlns:pns="http://UserServicesCentralApp" type="tns:Line" xmlns:tns="http://model"/>
+      </operation>
+      <operation name="makeTimetable" qname="operNS:makeTimetable" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:makeTimetableReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:Timetable" xmlns:rtns="http://model" soapAction="" >
+        <parameter qname="pns:estimatedTime" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:stationID" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getALine" qname="operNS:getALine" xmlns:operNS="http://UserServicesCentralApp" returnQName="retNS:getALineReturn" xmlns:retNS="http://UserServicesCentralApp" returnType="rtns:Line" xmlns:rtns="http://model" soapAction="" >
+        <parameter qname="pns:lineId" xmlns:pns="http://UserServicesCentralApp" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="addLine readAllFromRedis deleteLine getALine markTheStationIsPassed putInRedis makeTimetable writeLine isLine getLinesForOneStation getAllLines"/>
+
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:Line"
+        type="java:model.Line"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://UserServicesCentralApp"
+        qname="ns:ArrayOf_tns1_Timetable"
+        type="java:model.Timetable[]"
+        innerType="cmp-ns:Timetable" xmlns:cmp-ns="http://model"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:Timetable"
+        type="java:model.Timetable"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

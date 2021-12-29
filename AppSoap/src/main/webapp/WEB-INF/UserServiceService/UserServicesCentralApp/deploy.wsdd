@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UserServiceService WSDL service -->
+
+  <service name="UserService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://UserServicesCentralApp"/>
+      <parameter name="wsdlServiceElement" value="UserServiceService"/>
+      <parameter name="schemaQualified" value="http://UserServicesCentralApp,http://model"/>
+      <parameter name="wsdlServicePort" value="UserService"/>
+      <parameter name="className" value="UserServicesCentralApp.UserService"/>
+      <parameter name="wsdlPortType" value="UserService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://UserServicesCentralApp" name="main" qname="operNS:main" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:args" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="isActive" qname="operNS:isActive" returnQName="retNS:isActiveReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://model" qname="pns:user" type="tns:User"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" name="deleteFile" qname="operNS:deleteFile" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:filename" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://model" name="getUsers" qname="operNS:getUsers" returnQName="retNS:getUsersReturn" returnType="rtns:User" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://model" name="getActiveUsersForStation" qname="operNS:getActiveUsersForStation" returnQName="retNS:getActiveUsersForStationReturn" returnType="rtns:User" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:stationId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://model" name="getUsersFromStation" qname="operNS:getUsersFromStation" returnQName="retNS:getUsersFromStationReturn" returnType="rtns:User" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:stationId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://model" name="login" qname="operNS:login" returnQName="retNS:loginReturn" returnType="rtns:User" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="isUser" qname="operNS:isUser" returnQName="retNS:isUserReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" name="logout" qname="operNS:logout" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://model" qname="pns:user" type="tns:User"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addUser" qname="operNS:addUser" returnQName="retNS:addUserReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idZSMDP" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://model" name="deserializeWithXML" qname="operNS:deserializeWithXML" returnQName="retNS:deserializeWithXMLReturn" returnType="rtns:User" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="isAlreadyUser" qname="operNS:isAlreadyUser" returnQName="retNS:isAlreadyUserReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" name="serializeWithXML" qname="operNS:serializeWithXML" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://model" qname="pns:user" type="tns:User"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://model" name="getThisUser" qname="operNS:getThisUser" returnQName="retNS:getThisUserReturn" returnType="rtns:User" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://UserServicesCentralApp" xmlns:retNS="http://UserServicesCentralApp" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteUser" qname="operNS:deleteUser" returnQName="retNS:deleteUserReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://UserServicesCentralApp" xmlns:tns="http://model" qname="pns:user" type="tns:User"/>
+      </operation>
+      <parameter name="allowedMethods" value="deleteFile isAlreadyUser deserializeWithXML serializeWithXML addUser main getThisUser isActive login getUsersFromStation logout getUsers deleteUser isUser getActiveUsersForStation"/>
+
+      <typeMapping xmlns:ns="http://model" qname="ns:User" type="java:model.User" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

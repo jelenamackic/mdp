@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReadNotificationFormController">
+   <children>
+      <TextArea fx:id="contentTextArea" layoutX="31.0" layoutY="87.0" prefHeight="242.0" prefWidth="318.0" />
+      <TextField fx:id="titleTextField" layoutX="31.0" layoutY="39.0" />
+      <Text layoutX="31.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Naslov" />
+      <Text layoutX="31.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sadrzaj" />
+      <TextField fx:id="senderTextField" layoutX="201.0" layoutY="347.0" />
+      <Text layoutX="155.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Poslao" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,243 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="C:\Users\admin\eclwrkspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\AppSoap\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="UserService" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="main" qname="ns1:main" soapAction="" xmlns:ns1="http://UserServicesCentralApp" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:args" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns2:operation>
+  <ns1:operation name="isActive" qname="ns2:isActive" returnQName="ns2:isActiveReturn" returnType="xsd:boolean" soapAction="" xmlns:ns2="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:user" type="ns3:User" xmlns:ns3="http://model"/>
+  </ns1:operation>
+  <ns1:operation name="deleteFile" qname="ns4:deleteFile" soapAction="" xmlns:ns4="http://UserServicesCentralApp">
+   <ns1:parameter qname="ns4:filename" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getUsers" qname="ns5:getUsers" returnQName="ns5:getUsersReturn" returnType="ns6:User" soapAction="" xmlns:ns5="http://UserServicesCentralApp" xmlns:ns6="http://model"/>
+  <ns1:operation name="getActiveUsersForStation" qname="ns7:getActiveUsersForStation" returnQName="ns7:getActiveUsersForStationReturn" returnType="ns8:User" soapAction="" xmlns:ns7="http://UserServicesCentralApp" xmlns:ns8="http://model">
+   <ns1:parameter qname="ns7:stationId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getUsersFromStation" qname="ns9:getUsersFromStation" returnQName="ns9:getUsersFromStationReturn" returnType="ns10:User" soapAction="" xmlns:ns10="http://model" xmlns:ns9="http://UserServicesCentralApp">
+   <ns1:parameter qname="ns9:stationId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="login" qname="ns11:login" returnQName="ns11:loginReturn" returnType="ns12:User" soapAction="" xmlns:ns11="http://UserServicesCentralApp" xmlns:ns12="http://model">
+   <ns1:parameter qname="ns11:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns11:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="isUser" qname="ns13:isUser" returnQName="ns13:isUserReturn" returnType="xsd:string" soapAction="" xmlns:ns13="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns13:username" type="xsd:string"/>
+   <ns1:parameter qname="ns13:password" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="logout" qname="ns14:logout" soapAction="" xmlns:ns14="http://UserServicesCentralApp">
+   <ns1:parameter qname="ns14:user" type="ns15:User" xmlns:ns15="http://model"/>
+  </ns1:operation>
+  <ns1:operation name="addUser" qname="ns16:addUser" returnQName="ns16:addUserReturn" returnType="xsd:boolean" soapAction="" xmlns:ns16="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns16:username" type="xsd:string"/>
+   <ns1:parameter qname="ns16:password" type="xsd:string"/>
+   <ns1:parameter qname="ns16:idZSMDP" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="deserializeWithXML" qname="ns17:deserializeWithXML" returnQName="ns17:deserializeWithXMLReturn" returnType="ns18:User" soapAction="" xmlns:ns17="http://UserServicesCentralApp" xmlns:ns18="http://model"/>
+  <ns1:operation name="isAlreadyUser" qname="ns19:isAlreadyUser" returnQName="ns19:isAlreadyUserReturn" returnType="xsd:boolean" soapAction="" xmlns:ns19="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns19:username" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="serializeWithXML" qname="ns20:serializeWithXML" soapAction="" xmlns:ns20="http://UserServicesCentralApp">
+   <ns1:parameter qname="ns20:user" type="ns21:User" xmlns:ns21="http://model"/>
+  </ns1:operation>
+  <ns1:operation name="getThisUser" qname="ns22:getThisUser" returnQName="ns22:getThisUserReturn" returnType="ns23:User" soapAction="" xmlns:ns22="http://UserServicesCentralApp" xmlns:ns23="http://model">
+   <ns1:parameter qname="ns22:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns22:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="deleteUser" qname="ns24:deleteUser" returnQName="ns24:deleteUserReturn" returnType="xsd:boolean" soapAction="" xmlns:ns24="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns24:user" type="ns25:User" xmlns:ns25="http://model"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="deleteFile isAlreadyUser deserializeWithXML serializeWithXML addUser main getThisUser isActive login getUsersFromStation logout getUsers deleteUser isUser getActiveUsersForStation"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="UserService"/>
+  <ns1:parameter name="className" value="UserServicesCentralApp.UserService"/>
+  <ns1:parameter name="wsdlServicePort" value="UserService"/>
+  <ns1:parameter name="schemaQualified" value="http://UserServicesCentralApp,http://model"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://UserServicesCentralApp"/>
+  <ns1:parameter name="wsdlServiceElement" value="UserServiceService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns26:User" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.User" xmlns:ns26="http://model"/>
+ </ns1:service>
+ <ns1:service name="Mnozenje" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="mnozi" qname="ns27:mnozi" returnQName="ns27:mnoziReturn" returnType="xsd:int" soapAction="" xmlns:ns27="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns27:arg1" type="xsd:int"/>
+   <ns1:parameter qname="ns27:arg2" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="mnozi"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Mnozenje"/>
+  <ns1:parameter name="className" value="UserServicesCentralApp.Mnozenje"/>
+  <ns1:parameter name="wsdlServicePort" value="Mnozenje"/>
+  <ns1:parameter name="schemaQualified" value="http://UserServicesCentralApp"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://UserServicesCentralApp"/>
+  <ns1:parameter name="wsdlServiceElement" value="MnozenjeService"/>
+ </ns1:service>
+ <ns1:service name="NewLineService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="deleteLine" qname="ns28:deleteLine" returnQName="ns28:deleteLineReturn" returnType="xsd:boolean" soapAction="" xmlns:ns28="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns28:lineId" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="addLine" qname="ns29:addLine" returnQName="ns29:addLineReturn" returnType="xsd:boolean" soapAction="" xmlns:ns29="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns29:lineId" type="xsd:int"/>
+   <ns1:parameter qname="ns29:stations" type="ns30:Timetable" xmlns:ns30="http://model"/>
+   <ns1:parameter qname="ns29:numberOfStations" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="getLinesForOneStation" qname="ns31:getLinesForOneStation" returnQName="ns31:getLinesForOneStationReturn" returnType="ns32:Line" soapAction="" xmlns:ns31="http://UserServicesCentralApp" xmlns:ns32="http://model">
+   <ns1:parameter qname="ns31:stationId" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getAllLines" qname="ns33:getAllLines" returnQName="ns33:getAllLinesReturn" returnType="ns34:Line" soapAction="" xmlns:ns33="http://UserServicesCentralApp" xmlns:ns34="http://model"/>
+  <ns1:operation name="isLine" qname="ns35:isLine" returnQName="ns35:isLineReturn" returnType="xsd:boolean" soapAction="" xmlns:ns35="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns35:lineId" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="addLine deleteLine isLine getLinesForOneStation getAllLines"/>
+  <ns1:parameter name="wsdlPortType" value="NewLineService"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://UserServicesCentralApp,http://model"/>
+  <ns1:parameter name="wsdlServicePort" value="NewLineService"/>
+  <ns1:parameter name="className" value="UserServicesCentralApp.NewLineService"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://UserServicesCentralApp"/>
+  <ns1:parameter name="wsdlServiceElement" value="NewLineServiceService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns36:Timetable" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.Timetable" xmlns:ns36="http://model"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns37:Line" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.Line" xmlns:ns37="http://model"/>
+  <ns1:arrayMapping innerType="ns39:Timetable" languageSpecificType="java:model.Timetable[]" qname="ns38:ArrayOf_tns1_Timetable" xmlns:ns38="http://UserServicesCentralApp" xmlns:ns39="http://model"/>
+ </ns1:service>
+ <ns1:service name="ZSMDPUserService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="deleteUser" qname="ns40:deleteUser" returnQName="ns40:deleteUserReturn" returnType="xsd:boolean" soapAction="" xmlns:ns40="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns40:user" type="ns41:User" xmlns:ns41="http://model"/>
+  </ns1:operation>
+  <ns1:operation name="isZSMDP" qname="ns42:isZSMDP" returnQName="ns42:isZSMDPReturn" returnType="xsd:boolean" soapAction="" xmlns:ns42="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns42:id" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getZSMDPs" qname="ns43:getZSMDPs" returnQName="ns43:getZSMDPsReturn" returnType="ns44:Zsmdp" soapAction="" xmlns:ns43="http://UserServicesCentralApp" xmlns:ns44="http://model"/>
+  <ns1:operation name="addZSMDP" qname="ns45:addZSMDP" returnQName="ns45:addZSMDPReturn" returnType="xsd:boolean" soapAction="" xmlns:ns45="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns45:location" type="xsd:string"/>
+   <ns1:parameter qname="ns45:idZSMDP" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="isZSMDP getZSMDPs deleteUser addZSMDP"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="ZSMDPUserService"/>
+  <ns1:parameter name="className" value="UserServicesCentralApp.ZSMDPUserService"/>
+  <ns1:parameter name="wsdlServicePort" value="ZSMDPUserService"/>
+  <ns1:parameter name="schemaQualified" value="http://UserServicesCentralApp,http://model"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://UserServicesCentralApp"/>
+  <ns1:parameter name="wsdlServiceElement" value="ZSMDPUserServiceService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns46:User" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.User" xmlns:ns46="http://model"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns47:Zsmdp" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.Zsmdp" xmlns:ns47="http://model"/>
+ </ns1:service>
+ <ns1:service name="ZSMDPService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="isZSMDP" qname="ns48:isZSMDP" returnQName="ns48:isZSMDPReturn" returnType="xsd:boolean" soapAction="" xmlns:ns48="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns48:id" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getAllZsmdps" qname="ns49:getAllZsmdps" returnQName="ns49:getAllZsmdpsReturn" returnType="ns50:Zsmdp" soapAction="" xmlns:ns49="http://UserServicesCentralApp" xmlns:ns50="http://model"/>
+  <ns1:operation name="putInRest" qname="ns51:putInRest" soapAction="" xmlns:ns51="http://UserServicesCentralApp">
+   <ns1:parameter qname="ns51:zsmdp" type="ns52:Zsmdp" xmlns:ns52="http://model"/>
+  </ns1:operation>
+  <ns1:operation name="addZSMDP" qname="ns53:addZSMDP" returnQName="ns53:addZSMDPReturn" returnType="xsd:boolean" soapAction="" xmlns:ns53="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns53:location" type="xsd:string"/>
+   <ns1:parameter qname="ns53:idZSMDP" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="isZSMDP getAllZsmdps putInRest addZSMDP"/>
+  <ns1:parameter name="wsdlPortType" value="ZSMDPService"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://UserServicesCentralApp,http://model"/>
+  <ns1:parameter name="wsdlServicePort" value="ZSMDPService"/>
+  <ns1:parameter name="className" value="UserServicesCentralApp.ZSMDPService"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://UserServicesCentralApp"/>
+  <ns1:parameter name="wsdlServiceElement" value="ZSMDPServiceService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns54:Zsmdp" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.Zsmdp" xmlns:ns54="http://model"/>
+ </ns1:service>
+ <ns1:service name="LineService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="markTheStationIsPassed" qname="ns55:markTheStationIsPassed" soapAction="" xmlns:ns55="http://UserServicesCentralApp">
+   <ns1:parameter qname="ns55:lineID" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns55:stationID" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns55:time" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getLinesForOneStation" qname="ns56:getLinesForOneStation" returnQName="ns56:getLinesForOneStationReturn" returnType="ns57:Line" soapAction="" xmlns:ns56="http://UserServicesCentralApp" xmlns:ns57="http://model">
+   <ns1:parameter qname="ns56:stationId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="writeLine" qname="ns58:writeLine" returnQName="ns58:writeLineReturn" returnType="xsd:string" soapAction="" xmlns:ns58="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns58:line" type="ns59:Line" xmlns:ns59="http://model"/>
+  </ns1:operation>
+  <ns1:operation name="addLine" qname="ns60:addLine" returnQName="ns60:addLineReturn" returnType="xsd:boolean" soapAction="" xmlns:ns60="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns60:lineId" type="xsd:int"/>
+   <ns1:parameter qname="ns60:stations" type="ns61:Timetable" xmlns:ns61="http://model"/>
+   <ns1:parameter qname="ns60:numberOfStations" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="deleteLine" qname="ns62:deleteLine" returnQName="ns62:deleteLineReturn" returnType="xsd:boolean" soapAction="" xmlns:ns62="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns62:lineId" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="getAllLines" qname="ns63:getAllLines" returnQName="ns63:getAllLinesReturn" returnType="ns64:Line" soapAction="" xmlns:ns63="http://UserServicesCentralApp" xmlns:ns64="http://model"/>
+  <ns1:operation name="isLine" qname="ns65:isLine" returnQName="ns65:isLineReturn" returnType="xsd:boolean" soapAction="" xmlns:ns65="http://UserServicesCentralApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns65:lineId" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="readAllFromRedis" qname="ns66:readAllFromRedis" returnQName="ns66:readAllFromRedisReturn" returnType="ns67:Line" soapAction="" xmlns:ns66="http://UserServicesCentralApp" xmlns:ns67="http://model"/>
+  <ns1:operation name="putInRedis" qname="ns68:putInRedis" soapAction="" xmlns:ns68="http://UserServicesCentralApp">
+   <ns1:parameter qname="ns68:line" type="ns69:Line" xmlns:ns69="http://model"/>
+  </ns1:operation>
+  <ns1:operation name="makeTimetable" qname="ns70:makeTimetable" returnQName="ns70:makeTimetableReturn" returnType="ns71:Timetable" soapAction="" xmlns:ns70="http://UserServicesCentralApp" xmlns:ns71="http://model">
+   <ns1:parameter qname="ns70:estimatedTime" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns70:stationID" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getALine" qname="ns72:getALine" returnQName="ns72:getALineReturn" returnType="ns73:Line" soapAction="" xmlns:ns72="http://UserServicesCentralApp" xmlns:ns73="http://model">
+   <ns1:parameter qname="ns72:lineId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="addLine readAllFromRedis deleteLine getALine markTheStationIsPassed putInRedis makeTimetable writeLine isLine getLinesForOneStation getAllLines"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="LineService"/>
+  <ns1:parameter name="className" value="UserServicesCentralApp.LineService"/>
+  <ns1:parameter name="wsdlServicePort" value="LineService"/>
+  <ns1:parameter name="schemaQualified" value="http://UserServicesCentralApp,http://model"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://UserServicesCentralApp"/>
+  <ns1:parameter name="wsdlServiceElement" value="LineServiceService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns74:Line" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.Line" xmlns:ns74="http://model"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns75:Timetable" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.Timetable" xmlns:ns75="http://model"/>
+  <ns1:arrayMapping innerType="ns77:Timetable" languageSpecificType="java:model.Timetable[]" qname="ns76:ArrayOf_tns1_Timetable" xmlns:ns76="http://UserServicesCentralApp" xmlns:ns77="http://model"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

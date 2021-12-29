@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/UserServicesCentralApp/LineService.java=UTF-8
+encoding//src/UserServicesCentralApp/LineServiceService.java=UTF-8
+encoding//src/UserServicesCentralApp/LineServiceServiceLocator.java=UTF-8
+encoding//src/UserServicesCentralApp/LineServiceSoapBindingStub.java=UTF-8
+encoding//src/UserServicesCentralApp/UserService.java=UTF-8
+encoding//src/UserServicesCentralApp/UserServiceService.java=UTF-8
+encoding//src/UserServicesCentralApp/UserServiceServiceLocator.java=UTF-8
+encoding//src/UserServicesCentralApp/UserServiceSoapBindingStub.java=UTF-8
+encoding//src/UserServicesCentralApp/ZSMDPService.java=UTF-8
+encoding//src/UserServicesCentralApp/ZSMDPServiceService.java=UTF-8
+encoding//src/UserServicesCentralApp/ZSMDPServiceServiceLocator.java=UTF-8
+encoding//src/UserServicesCentralApp/ZSMDPServiceSoapBindingStub.java=UTF-8
+encoding//src/model/Line.java=UTF-8
+encoding//src/model/Timetable.java=UTF-8
+encoding//src/model/User.java=UTF-8
+encoding//src/model/Zsmdp.java=UTF-8

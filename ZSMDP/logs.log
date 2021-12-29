@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T13:17:34</date>
+  <millis>1631099854129</millis>
+  <sequence>8</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>20</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-08T13:17:38</date>
+  <millis>1631099858397</millis>
+  <sequence>9</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>19</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T13:30:38</date>
+  <millis>1631100638014</millis>
+  <sequence>0</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.App</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>java.rmi.NotBoundException: "ReportServer";</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T13:34:15</date>
+  <millis>1631100855823</millis>
+  <sequence>0</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.App</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>java.rmi.NotBoundException: "ReportServer";</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T14:28:23</date>
+  <millis>1631104103237</millis>
+  <sequence>0</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.App</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>java.rmi.NotBoundException: "ReportServer";</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T15:04:28</date>
+  <millis>1631106268911</millis>
+  <sequence>0</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.App</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>java.rmi.NotBoundException: "ReportServer";</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T15:13:44</date>
+  <millis>1631106824275</millis>
+  <sequence>9</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-08T15:13:49</date>
+  <millis>1631106829508</millis>
+  <sequence>10</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T15:23:26</date>
+  <millis>1631107406652</millis>
+  <sequence>3</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClient</class>
+  <method>start</method>
+  <thread>14</thread>
+  <message>java.net.SocketException: java.security.NoSuchAlgorithmException: Error constructing implementation (algorithm: Default, provider: SunJSSE, class: sun.security.ssl.SSLContextImpl$DefaultSSLContext)</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T15:28:01</date>
+  <millis>1631107681808</millis>
+  <sequence>3</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>controllers.LoginController</class>
+  <method>showMainPage</method>
+  <thread>14</thread>
+  <message>javafx.fxml.LoadException: 
+/C:/Users/admin/eclwrkspace/ZSMDP/bin/fxmls/mainStage.fxml
+</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T15:29:41</date>
+  <millis>1631107781691</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-08T15:29:42</date>
+  <millis>1631107782709</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T15:31:01</date>
+  <millis>1631107861637</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-08T15:31:04</date>
+  <millis>1631107864637</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T15:32:31</date>
+  <millis>1631107951610</millis>
+  <sequence>3</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClient</class>
+  <method>start</method>
+  <thread>14</thread>
+  <message>java.net.SocketException: java.security.NoSuchAlgorithmException: Error constructing implementation (algorithm: Default, provider: SunJSSE, class: sun.security.ssl.SSLContextImpl$DefaultSSLContext)</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T15:34:09</date>
+  <millis>1631108049719</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T18:25:03</date>
+  <millis>1631118303993</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-08T18:25:23</date>
+  <millis>1631118323559</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T18:35:03</date>
+  <millis>1631118903447</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-08T18:35:08</date>
+  <millis>1631118908327</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T18:36:37</date>
+  <millis>1631118997526</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T18:37:55</date>
+  <millis>1631119075101</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-08T18:37:55</date>
+  <millis>1631119075421</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T18:40:51</date>
+  <millis>1631119251690</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T18:47:10</date>
+  <millis>1631119630506</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T19:20:43</date>
+  <millis>1631121643564</millis>
+  <sequence>2</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastService</class>
+  <method>&lt;init&gt;</method>
+  <thread>14</thread>
+  <message>java.net.SocketException: error setting options</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T19:36:37</date>
+  <millis>1631122597021</millis>
+  <sequence>3</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>javax.net.ssl.SSLException: java.net.SocketException: Software caused connection abort: recv failed</message>
+</record>
+<record>
+  <date>2021-09-08T19:36:39</date>
+  <millis>1631122599186</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClient</class>
+  <method>sendMessage</method>
+  <thread>14</thread>
+  <message>java.net.SocketException: Connection or outbound has closed</message>
+</record>
+<record>
+  <date>2021-09-08T19:36:45</date>
+  <millis>1631122605771</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T19:44:35</date>
+  <millis>1631123075694</millis>
+  <sequence>10</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-08T19:44:38</date>
+  <millis>1631123078166</millis>
+  <sequence>11</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T19:45:40</date>
+  <millis>1631123140548</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<record>
+  <date>2021-09-08T19:45:40</date>
+  <millis>1631123140557</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>javax.net.ssl.SSLException: java.net.SocketException: Socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T19:46:41</date>
+  <millis>1631123201871</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T20:06:52</date>
+  <millis>1631124412783</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-08T20:09:53</date>
+  <millis>1631124593373</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-08T20:09:53</date>
+  <millis>1631124593931</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T10:49:53</date>
+  <millis>1631177393743</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<record>
+  <date>2021-09-09T10:49:53</date>
+  <millis>1631177393748</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>javax.net.ssl.SSLException: java.net.SocketException: Socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T10:53:38</date>
+  <millis>1631177618963</millis>
+  <sequence>3</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>javax.net.ssl.SSLException: java.net.SocketException: Connection reset</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T10:57:05</date>
+  <millis>1631177825466</millis>
+  <sequence>3</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>javax.net.ssl.SSLException: java.net.SocketException: Connection reset</message>
+</record>
+<record>
+  <date>2021-09-09T10:57:11</date>
+  <millis>1631177831783</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClient</class>
+  <method>sendMessage</method>
+  <thread>14</thread>
+  <message>java.net.SocketException: Connection or outbound has closed</message>
+</record>
+<record>
+  <date>2021-09-09T10:57:13</date>
+  <millis>1631177833138</millis>
+  <sequence>6</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T10:58:16</date>
+  <millis>1631177896738</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<record>
+  <date>2021-09-09T10:58:16</date>
+  <millis>1631177896743</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>javax.net.ssl.SSLException: java.net.SocketException: Socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T10:59:57</date>
+  <millis>1631177997406</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<record>
+  <date>2021-09-09T10:59:57</date>
+  <millis>1631177997410</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>javax.net.ssl.SSLException: java.net.SocketException: Socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T11:00:40</date>
+  <millis>1631178040109</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<record>
+  <date>2021-09-09T11:00:40</date>
+  <millis>1631178040113</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>javax.net.ssl.SSLException: java.net.SocketException: Socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T11:13:38</date>
+  <millis>1631178818358</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-09T11:13:45</date>
+  <millis>1631178825879</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T11:18:29</date>
+  <millis>1631179109782</millis>
+  <sequence>4</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-09T11:18:30</date>
+  <millis>1631179110367</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T11:25:01</date>
+  <millis>1631179501325</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-09T11:25:02</date>
+  <millis>1631179502636</millis>
+  <sequence>6</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T11:28:38</date>
+  <millis>1631179718861</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-09T11:28:40</date>
+  <millis>1631179720794</millis>
+  <sequence>6</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T12:00:59</date>
+  <millis>1631181659374</millis>
+  <sequence>6</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-09T12:01:00</date>
+  <millis>1631181660577</millis>
+  <sequence>7</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T12:02:54</date>
+  <millis>1631181774074</millis>
+  <sequence>6</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-09T12:02:55</date>
+  <millis>1631181775637</millis>
+  <sequence>7</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-09T12:05:46</date>
+  <millis>1631181946516</millis>
+  <sequence>5</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+<record>
+  <date>2021-09-09T12:05:46</date>
+  <millis>1631181946521</millis>
+  <sequence>6</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>javax.net.ssl.SSLException: java.net.SocketException: Socket closed</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-13T09:40:07</date>
+  <millis>1631518807437</millis>
+  <sequence>6</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.ChatClientThread</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>java.io.EOFException</message>
+</record>
+<record>
+  <date>2021-09-13T09:40:08</date>
+  <millis>1631518808346</millis>
+  <sequence>7</sequence>
+  <logger>application.App</logger>
+  <level>WARNING</level>
+  <class>application.MulticastThread</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>java.net.SocketException: socket closed</message>
+</record>
+</log>
